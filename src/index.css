@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Krona One", sans-serif;
+
+  --color-brand-purple: #1d0328;
+  --color-brand-orange: #ff6a2a;
+  --color-brand-blue: #373afd;
+  --color-brand-light: #f3f3f3;
+  --color-brand-vibrant: #5356ff;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-purple font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-display uppercase tracking-tight;
+  }
+}
+
+@layer utilities {
+  .video-overlay-light {
+    background: linear-gradient(135deg, rgba(55, 58, 253, 0.3) 0%, rgba(29, 3, 40, 0.5) 100%);
+  }
+  
+  .glass-light {
+    @apply bg-white/60 border border-brand-blue/5 backdrop-blur-sm shadow-lg;
+  }
+
+  .text-shadow-premium {
+    text-shadow: 0 1px 4px rgba(29, 3, 40, 0.2);
+  }
+  
+  .section-spacing {
+    @apply py-20 md:py-24;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d0328;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #373afd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6a2a;
+}
