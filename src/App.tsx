@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 
 // --- CONFIGURABLE CONSTANTS ---
-const PURCHASE_TICKET_URL = "https://example.com/tickets";
+const PURCHASE_TICKET_URL = "https://www.sympla.com.br/evento/leapy-on-2026-conferencia-anual-de-jovens-talentos/3397818";
 
 // --- DATA STRUCTURES ---
 
@@ -100,53 +100,53 @@ const AGENDA = [
     details: "Provocações pela futurista, Michelle Schneider, autora do livro \"O profissional do futuro” e palestrante no SXSW, em Austin."
   },
   {
-    time: "14h30 – 15h00",
-    title: "A nova lógica do desenvolvimento de talentos",
-    details: "Como o olhar skill-based muda a forma de atrair, desenvolver e avaliar jovens talentos"
-  },
-  {
-    time: "15h00 – 15h30",
-    title: "Leituras do mercado: Dados e insights que ajudam a tomar melhores decisões em programas de entrada",
-    details: "Curadoria e apresentação de pesquisas e boas práticas"
-  },
-  {
-    time: "15h30 – 16h00",
-    title: "Pausa para recarregar",
-    details: "Coffee break com acesso às ativações e espaços dos parceiros",
-    icon: "snack"
-  },
-  {
-    time: "16h00 – 16h40",
-    title: "Do palco para a troca",
-    details: "Rodas de conversa em pequenos grupos para discussão de desafios reais e construções coletivas"
-  },
-  {
-    time: "16h40 – 17h00",
-    title: "Networking em movimento",
-    details: "Uma dinâmica divertida para facilitar conexões e ampliar as trocas entre participantes"
-  },
-  {
-    time: "17h00 – 17h15",
+    time: "14h30 – 14h50",
     title: "Soluções para quem está na linha de frente",
     details: "Apresentação dos patrocinadores que também contribuem para o ecossistema"
   },
   {
-    time: "17h15 – 17h45",
-    title: "Vozes da juventude - o que a Gen Z tem a dizer",
+    time: "14h50 – 15h30",
+    title: "A nova lógica do desenvolvimento de talentos",
+    details: "Como o olhar skill-based muda a forma de atrair, desenvolver e avaliar jovens talentos"
+  },
+  {
+    time: "15h30 – 16h10",
+    title: "Leituras do mercado: Dados e insights que ajudam a tomar melhores decisões em programas de entrada",
+    details: "Curadoria e apresentação de pesquisas e boas práticas"
+  },
+  {
+    time: "16h10 – 16h40",
+    title: "Pausa para recarregar e trocar",
+    details: "Coffee break com acesso às ativações e espaços dos parceiros",
+    icon: "snack"
+  },
+  {
+    time: "16h40 – 17h25",
+    title: "Do palco para a troca",
+    details: "Rodas de conversa em pequenos grupos para discussão de desafios reais e construções coletivas"
+  },
+  {
+    time: "17h25 – 17h45",
+    title: "Networking em movimento",
+    details: "Uma dinâmica divertida para facilitar conexões e ampliar as trocas entre participantes"
+  },
+  {
+    time: "17h45 – 18h15",
+    title: "Vozes da juventude - o que as novas gerações tem a dizer",
     details: "Jovens no palco trazendo percepções reais sobre trabalho, carreira, sonhos, expectativas e conflitos"
   },
   {
-    time: "17h45 – 18h30",
+    time: "18h15 – 19h00",
     title: "Vozes do trabalho - diferentes perspectivas, um desafio em comum",
     details: "Lideranças de empresas, setor público e academia discutem como suas frentes se conectam (ou precisam se conectar) para responder às transformações do mercado de trabalho"
   },
   {
-    time: "18h30 – 19h00",
+    time: "19h00 – 19h30",
     title: "Encerramento e próximos passos",
     details: "Download do dia, premiações e nosso compromisso coletivo"
   },
   {
-    time: "19h00 – 20h00",
+    time: "19h30 – 20h00",
     title: "Happy Hour",
     details: "Onde as conversas continuam",
     icon: "cocktail"
@@ -155,7 +155,34 @@ const AGENDA = [
 
 // --- COMPONENTS ---
 
-const SpeakerCard = ({ speaker, index }: any) => {
+type Speaker = {
+  name: string;
+  title?: string;
+  role: string;
+  image: string;
+  linkedin?: string;
+  isPlaceholder?: boolean;
+};
+
+type SpeakerCardProps = {
+  speaker: Speaker;
+  index: number;
+};
+
+type ModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+};
+
+type ButtonCTAProps = {
+  children: React.ReactNode;
+  className?: string;
+  secondary?: boolean;
+  animate?: React.ComponentProps<typeof motion.a>['animate'];
+};
+
+const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -166,7 +193,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
       transition={{ delay: index * 0.1 }}
       className="group [perspective:1000px] h-[450px] w-full cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
+      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
       role="button"
       tabIndex={0}
       aria-label={`Ver bio de ${speaker.name}`}
@@ -225,7 +252,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
                     href={speaker.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation()}
                     className="mb-1 p-2 bg-white/10 hover:bg-brand-orange text-white rounded-lg transition-all duration-300 backdrop-blur-md"
                     title={`LinkedIn de ${speaker.name}`}
                   >
@@ -281,7 +308,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
   );
 };
 
-const Modal = ({ isOpen, onClose, children }) => (
+const Modal = ({ isOpen, onClose, children }: ModalProps) => (
   <AnimatePresence>
     {isOpen && (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -311,7 +338,7 @@ const Modal = ({ isOpen, onClose, children }) => (
   </AnimatePresence>
 );
 
-const ButtonCTA = ({ children, className = "", secondary = false, animate }: any) => (
+const ButtonCTA = ({ children, className = "", secondary = false, animate }: ButtonCTAProps) => (
   <motion.a 
     href={PURCHASE_TICKET_URL}
     target="_blank"
@@ -329,7 +356,7 @@ const ButtonCTA = ({ children, className = "", secondary = false, animate }: any
 );
 
 export default function App() {
-  const [expandedAgenda, setExpandedAgenda] = useState(null);
+  const [expandedAgenda, setExpandedAgenda] = useState<number | null>(null);
   const ticketControls = useAnimation();
   const scrollerRef = React.useRef<HTMLDivElement>(null);
 
@@ -405,6 +432,7 @@ export default function App() {
               <a href="#agenda" className="hover:text-brand-orange transition-colors">Agenda</a>
               <a href="#sobre" className="hover:text-brand-orange transition-colors">Sobre</a>
               <a href="#parcerias" className="hover:text-brand-orange transition-colors">Parcerias</a>
+              <a href="https://www.leapy.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">A Leapy</a>
               <a 
                 href="#home" 
                 onClick={handleTicketClick}
@@ -581,7 +609,7 @@ export default function App() {
                 src="/src/community.png" 
                 alt="Comunidade Leapy ON" 
                 className="w-full max-w-4xl h-auto drop-shadow-2xl"
-                onError={(e) => {
+                onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
@@ -631,7 +659,7 @@ export default function App() {
                       {item.icon === 'cocktail' && <Martini size={120} />}
                     </div>
                   )}
-                  <div className={`text-xl font-bold md:w-32 tracking-tight flex items-center gap-3 ${expandedAgenda === index ? 'text-brand-blue' : 'text-brand-orange'}`}>
+                  <div className={`text-xl font-bold md:w-40 tracking-tight flex items-center gap-3 ${expandedAgenda === index ? 'text-brand-blue' : 'text-brand-orange'}`}>
                     {item.icon && (
                       <span className="md:hidden">
                         {item.icon === 'coffee' && <Coffee size={20} />}
@@ -639,7 +667,7 @@ export default function App() {
                         {item.icon === 'cocktail' && <Martini size={20} />}
                       </span>
                     )}
-                    {item.time.split(' – ')[0]}
+                    {item.time}
                   </div>
                   <div className="flex-1 flex items-center gap-4">
                     <h4 className="text-lg md:text-xl font-bold leading-tight uppercase font-display tracking-tight flex items-center gap-3">
@@ -676,72 +704,143 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. SOBRE (Clean & Balanced) - Moved to bottom */}
-      <section id="sobre" className="section-spacing bg-white relative">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-12 lg:col-span-12 text-center mb-4">
+      {/* 5. SOBRE (Clean & Balanced) */}
+      <section id="sobre" className="py-24 bg-white relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
             <h2 className="text-brand-blue text-[10px] tracking-[0.4em] font-bold mb-6">SOBRE O LEAPY ON</h2>
             <h3 className="text-3xl md:text-5xl text-brand-purple leading-tight font-black uppercase font-display tracking-tight">ESPAÇO DE <span className="text-brand-blue">TROCAS</span> E INSPIRAÇÃO</h3>
           </div>
-          <div className="md:col-span-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Para quem é */}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {/* Para quem é */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
+                <Users size={24} />
+              </div>
+              <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">Para quem é</h4>
+              <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
+                Para quem está na linha de frente do desenvolvimento de talentos — especialmente quem lidera RH e conduz programas de jovem aprendiz, estágio ou trainee.
+              </p>
+              <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
+                Um encontro pensado para quem não está só acompanhando as mudanças, mas precisa responder a elas na prática.
+              </p>
+            </motion.div>
+
+            {/* O que você vai encontrar */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
+                <Lightbulb size={24} />
+              </div>
+              <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">O que você vai encontrar</h4>
+              <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
+                Uma agenda focada nas transformações que já estão impactando os cargos de entrada: o que está mudando, o que já não funciona mais e quais caminhos já estão sendo testados por quem está na ponta.
+              </p>
+              <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
+                Conteúdos e trocas que geram repertório acionável — ideias que podem começar a ser colocadas em prática no dia seguinte.
+              </p>
+            </motion.div>
+
+            {/* Como vai acontecer */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
+                <Activity size={24} />
+              </div>
+              <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">Como vai acontecer</h4>
+              <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
+                Mais do que um evento para assistir, o Leapy ON é um espaço para participar ativamente.
+              </p>
+              <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
+                A proposta é tirar a audiência da cadeira e colocar a pauta de jovens talentos em movimento — promovendo troca real entre quem enfrenta os mesmos desafios e entre quem já está construindo novos caminhos.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Integrated Testimonials - Bubbles Style */}
+          <div className="mt-20">
+            <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch max-w-5xl mx-auto">
+              {/* Testimonial 1 - Yago Guimarães */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
+                className="flex-1 bg-brand-light p-8 rounded-[40px] border border-brand-purple/10 flex flex-col justify-between shadow-sm"
               >
-                <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
-                  <Users size={24} />
+                <div>
+                  <div className="text-brand-blue mb-6">
+                    <svg width="24" height="18" viewBox="0 0 24 18" fill="currentColor">
+                      <path d="M0 18V9C0 4.02944 4.02944 0 9 0V4.5C6.51472 4.5 4.5 6.51472 4.5 9H9V18H0ZM13.5 18V9C13.5 4.02944 17.5294 0 22.5 0V4.5C20.0147 4.5 18 6.51472 18 9H22.5V18H13.5Z" />
+                    </svg>
+                  </div>
+                  <p className="text-brand-purple font-bold italic text-lg leading-relaxed mb-8">
+                    "Tira a gente de um lugar de pensar no jovem talento como a gente vem pensando há muito tempo e nos provoca a olhar para esta pauta de outra forma"
+                  </p>
                 </div>
-                <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">Para quem é</h4>
-                <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
-                  Para quem está na linha de frente do desenvolvimento de talentos — especialmente quem lidera RH e conduz programas de jovem aprendiz, estágio ou trainee.
-                </p>
-                <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
-                  Um encontro pensado para quem não está só acompanhando as mudanças, mas precisa responder a elas na prática.
-                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-brand-purple/10 border-2 border-white shadow-sm">
+                    <img 
+                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Yago.png" 
+                      alt="Yago Guimarães" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-black uppercase text-[10px] tracking-widest text-brand-purple">Yago Guimarães</span>
+                    <span className="text-[9px] text-brand-purple/50 font-bold uppercase tracking-[0.1em] mt-0.5">Global Learning Specialist - Nubank</span>
+                  </div>
+                </div>
               </motion.div>
 
-              {/* O que você vai encontrar */}
+              {/* Testimonial 2 - Gabriella Maffei */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
+                className="flex-1 bg-brand-light p-8 rounded-[40px] border border-brand-purple/10 flex flex-col justify-between shadow-sm"
               >
-                <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
-                  <Lightbulb size={24} />
+                <div>
+                  <div className="text-brand-orange mb-6">
+                    <svg width="24" height="18" viewBox="0 0 24 18" fill="currentColor">
+                      <path d="M0 18V9C0 4.02944 4.02944 0 9 0V4.5C6.51472 4.5 4.5 6.51472 4.5 9H9V18H0ZM13.5 18V9C13.5 4.02944 17.5294 0 22.5 0V4.5C20.0147 4.5 18 6.51472 18 9H22.5V18H13.5Z" />
+                    </svg>
+                  </div>
+                  <p className="text-brand-purple font-bold italic text-lg leading-relaxed mb-8">
+                    "O Leapy ON significa a concretização de uma comunidade que tem um propósito em comum"
+                  </p>
                 </div>
-                <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">O que você vai encontrar</h4>
-                <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
-                  Uma agenda focada nas transformações que já estão impactando os cargos de entrada: o que está mudando, o que já não funciona mais e quais caminhos já estão sendo testados por quem está na ponta.
-                </p>
-                <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
-                  Conteúdos e trocas que geram repertório acionável — ideias que podem começar a ser colocadas em prática no dia seguinte.
-                </p>
-              </motion.div>
-
-              {/* Como vai acontecer */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="bg-white p-8 rounded-[32px] border border-brand-light shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-brand-blue mb-6">
-                  <Activity size={24} />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-brand-purple/10 border-2 border-white shadow-sm">
+                    <img 
+                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/gabriela.png" 
+                      alt="Gabriella Maffei" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-black uppercase text-[10px] tracking-widest text-brand-purple">Gabriella Maffei</span>
+                    <span className="text-[9px] text-brand-purple/50 font-bold uppercase tracking-[0.1em] mt-0.5">Gerente de Tech Learning - Serasa</span>
+                  </div>
                 </div>
-                <h4 className="text-xl font-black uppercase font-display mb-4 text-brand-purple">Como vai acontecer</h4>
-                <p className="text-brand-purple/70 leading-relaxed text-sm mb-4">
-                  Mais do que um evento para assistir, o Leapy ON é um espaço para participar ativamente.
-                </p>
-                <p className="text-brand-purple/80 leading-relaxed text-sm font-semibold italic">
-                  A proposta é tirar a audiência da cadeira e colocar a pauta de jovens talentos em movimento — promovendo troca real entre quem enfrenta os mesmos desafios e entre quem já está construindo novos caminhos.
-                </p>
               </motion.div>
             </div>
           </div>
@@ -816,24 +915,40 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-16 bg-white text-brand-purple border-t border-brand-light">
+      <footer className="py-24 bg-brand-purple text-white rounded-t-[40px] md:rounded-t-[60px] relative z-10">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12 pb-12 border-b border-brand-light">
-            <img 
-              src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logotipo_3.png" 
-              alt="Leapy" 
-              className="h-8 md:h-10 w-auto object-contain grayscale"
-              referrerPolicy="no-referrer"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+            {/* Brand & Description */}
+            <div className="lg:col-span-8 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <img 
+                src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logotipo_3.png" 
+                alt="Leapy" 
+                className="h-16 md:h-18 w-auto object-contain brightness-0 invert flex-shrink-0"
+                referrerPolicy="no-referrer"
+              />
+              <div className="space-y-6">
+                <p className="text-white/70 text-sm leading-relaxed max-w-2xl">
+                  Contrate, desenvolva e faça a gestão de Jovens Aprendizes com menos esforço e mais resultado. As empresas mais inovadoras do país já contam com a Leapy para transformar essa obrigação legal em uma oportunidade estratégica.
+                </p>
+              </div>
+            </div>
             
-            <nav className="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold">
-              <a href="#" className="hover:text-brand-orange transition-colors">LinkedIn</a>
-              <a href="mailto:lais.rocha@leapy.com.br" className="hover:text-brand-orange transition-colors">Contato</a>
-            </nav>
+            {/* Navigation */}
+            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-start pt-4">
+              <nav className="flex flex-wrap justify-center lg:justify-end gap-x-8 gap-y-4 text-[10px] uppercase tracking-[0.3em] font-bold">
+                <a href="https://www.leapy.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">A Leapy</a>
+                <a href="https://www.linkedin.com/school/leapywithus/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange transition-colors">LinkedIn</a>
+              </nav>
+            </div>
           </div>
           
-          <div className="pt-10 text-center md:text-left text-[9px] uppercase tracking-widest font-bold opacity-20">
-            © 2026 LEAPY ON | CONFERÊNCIA ANUAL DE TALENTOS
+          <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-[9px] uppercase tracking-widest font-bold opacity-40">
+              © 2026 LEAPY ON | CONFERÊNCIA ANUAL DE TALENTOS
+            </div>
+            <div className="text-[8px] uppercase tracking-[0.2em] font-medium opacity-20 hover:opacity-50 transition-opacity cursor-default">
+              Edição 2024 • Salvador/BA — Edição 2025 • São Paulo/SP
+            </div>
           </div>
         </div>
       </footer>
