@@ -32,8 +32,8 @@ const PURCHASE_TICKET_URL = "https://www.sympla.com.br/evento/leapy-on-2026-conf
 const SPEAKERS = [
   {
     name: "Michelle Schneider",
-    title: "Futurista, autora de\n\"O profissional do futuro\"",
-    role: "Futurista, palestrante internacional, LinkedIn Top Voice, autora do livro “O profissional do futuro”, professora na Singularity University e com passagem pelo Google, LinkedIn e TikTok",
+    title: "Especialista em futuro do trabalho\ne autora best seller",
+    role: "Especialista em futuro do trabalho, autora best-seller de \"O Profissional do Futuro\" e uma das principais vozes sobre o futuro do trabalho no Brasil. Com duas décadas de experiência liderando equipes em empresas como Google, LinkedIn e TikTok, hoje é professora convidada da Singularity University e sócia da consultoria americana de IA Signal & Cipher, onde ajuda empresas e líderes a repensar o trabalho e o papel humano na era da inteligência artificial.",
     image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Michelle%20Schneider.png",
     linkedin: "https://www.linkedin.com/in/mtschneider/?locale=pt_BR"
   },
@@ -45,16 +45,16 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/mvrfonseca/"
   },
   {
-    name: "Em breve",
-    role: "Estamos preparando novidades incríveis para este slot do palco. Fique de olho em nossas redes sociais para o anúncio oficial!",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-    isPlaceholder: true
+    name: "Maira Habimorad",
+    title: "CEO do Inteli",
+    role: "CEO do Inteli (Instituto de Tecnologia e Lideranças), Maíra também é membro do conselho do BTG Pactual e do Banco Pan, além de cofundadora da Bettha. Por nove anos, liderou a Cia de Talentos, do Grupo DMRH.\n\nÉ formada em Relações Internacionais pela FAAP e em Filosofia pela Mackenzie, combinando uma formação que a capacitou a entender as complexidades do mundo dos negócios e educação.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Ma%C3%ADra%20Habimorad.png"
   },
   {
-    name: "Em breve",
-    role: "Um novo nome de peso está chegando ao Leapy ON. Em breve revelaremos quem se juntará a nós nesta jornada de transformação.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-    isPlaceholder: true
+    name: "Roberta Saragiotto",
+    title: "Cofundadora da Blumi",
+    role: "Executiva de RH com 20 anos de experiência, com passagem por Credit Suisse, Credit Agricole e Morgan Stanley. Especialista em jovens talentos, recrutamento e convivência entre gerações, iniciou sua relação com a Start Carreiras como investidora-anjo. Hoje é cofundadora da Blūmi, responsável por estratégia, mercado e relacionamento com empresas.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Foto%20-%20Roberta%20Saragiotto.png"
   },
   {
     name: "Em breve",
@@ -97,7 +97,7 @@ const AGENDA = [
   {
     time: "13h45 – 14h30",
     title: "O trabalho está sendo redesenhado. Por onde se começa agora?",
-    details: "Provocações pela futurista, Michelle Schneider, autora do livro \"O profissional do futuro” e palestrante no SXSW, em Austin."
+    details: "Provocações pela Michelle Schneider, especialista em futuro do trabalho\ne autora best seller, palestrante no SXSW."
   },
   {
     time: "14h30 – 14h50",
@@ -138,7 +138,7 @@ const AGENDA = [
   {
     time: "18h15 – 19h00",
     title: "Vozes do trabalho - diferentes perspectivas, um desafio em comum",
-    details: "Lideranças de empresas, setor público e academia discutem como suas frentes se conectam (ou precisam se conectar) para responder às transformações do mercado de trabalho"
+    details: "Lideranças empresariais, empreendedores e representantes da academia discutem como suas frentes se conectam (ou precisam se conectar) para responder às transformações do mercado de trabalho"
   },
   {
     time: "19h00 – 19h30",
@@ -155,34 +155,7 @@ const AGENDA = [
 
 // --- COMPONENTS ---
 
-type Speaker = {
-  name: string;
-  title?: string;
-  role: string;
-  image: string;
-  linkedin?: string;
-  isPlaceholder?: boolean;
-};
-
-type SpeakerCardProps = {
-  speaker: Speaker;
-  index: number;
-};
-
-type ModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-};
-
-type ButtonCTAProps = {
-  children: React.ReactNode;
-  className?: string;
-  secondary?: boolean;
-  animate?: React.ComponentProps<typeof motion.a>['animate'];
-};
-
-const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
+const SpeakerCard = ({ speaker, index }: any) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -193,7 +166,7 @@ const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
       transition={{ delay: index * 0.1 }}
       className="group [perspective:1000px] h-[450px] w-full cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
+      onKeyDown={(e) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
       role="button"
       tabIndex={0}
       aria-label={`Ver bio de ${speaker.name}`}
@@ -252,7 +225,7 @@ const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
                     href={speaker.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation()}
+                    onClick={(e) => e.stopPropagation()}
                     className="mb-1 p-2 bg-white/10 hover:bg-brand-orange text-white rounded-lg transition-all duration-300 backdrop-blur-md"
                     title={`LinkedIn de ${speaker.name}`}
                   >
@@ -277,25 +250,25 @@ const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
               <Users size={180} />
             </div>
 
-            <div className="relative z-10">
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-10 h-10 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange">
-                  <Lightbulb size={20} />
+              <div className="relative z-10 flex-1 overflow-hidden flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-10 h-10 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange shrink-0">
+                    <Lightbulb size={20} />
+                  </div>
+                  <div className="text-[10px] text-white/40 uppercase tracking-widest font-black border border-white/10 px-3 py-1 rounded-full shrink-0">
+                    Bio Completa
+                  </div>
                 </div>
-                <div className="text-[10px] text-white/40 uppercase tracking-widest font-black border border-white/10 px-3 py-1 rounded-full">
-                  Bio Completa
+                
+                <h4 className="text-xl font-black text-white font-display uppercase tracking-tight mb-2 leading-none shrink-0">
+                  {speaker.name}
+                </h4>
+                <div className="h-1 w-12 bg-brand-orange mb-6 shrink-0" />
+                
+                <div className="text-white/80 text-sm md:text-base leading-relaxed font-medium overflow-y-auto pr-2 custom-scrollbar flex-1 whitespace-pre-line">
+                  {speaker.role}
                 </div>
               </div>
-              
-              <h4 className="text-xl font-black text-white font-display uppercase tracking-tight mb-2 leading-none">
-                {speaker.name}
-              </h4>
-              <div className="h-1 w-12 bg-brand-orange mb-6" />
-              
-              <div className="text-white/80 text-sm md:text-base leading-relaxed font-medium">
-                {speaker.role}
-              </div>
-            </div>
 
             <div className="relative z-10 pt-4 flex items-center justify-between border-t border-white/10">
               <span className="text-[10px] text-brand-orange uppercase tracking-[0.2em] font-black">Palestrante Oficial</span>
@@ -308,7 +281,7 @@ const SpeakerCard = ({ speaker, index }: SpeakerCardProps) => {
   );
 };
 
-const Modal = ({ isOpen, onClose, children }: ModalProps) => (
+const Modal = ({ isOpen, onClose, children }) => (
   <AnimatePresence>
     {isOpen && (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -338,7 +311,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => (
   </AnimatePresence>
 );
 
-const ButtonCTA = ({ children, className = "", secondary = false, animate }: ButtonCTAProps) => (
+const ButtonCTA = ({ children, className = "", secondary = false, animate }: any) => (
   <motion.a 
     href={PURCHASE_TICKET_URL}
     target="_blank"
@@ -356,7 +329,7 @@ const ButtonCTA = ({ children, className = "", secondary = false, animate }: But
 );
 
 export default function App() {
-  const [expandedAgenda, setExpandedAgenda] = useState<number | null>(null);
+  const [expandedAgenda, setExpandedAgenda] = useState(null);
   const ticketControls = useAnimation();
   const scrollerRef = React.useRef<HTMLDivElement>(null);
 
@@ -609,7 +582,7 @@ export default function App() {
                 src="/src/community.png" 
                 alt="Comunidade Leapy ON" 
                 className="w-full max-w-4xl h-auto drop-shadow-2xl"
-                onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
@@ -687,7 +660,7 @@ export default function App() {
                           initial={{ height: 0, opacity: 0, marginTop: 0 }}
                           animate={{ height: "auto", opacity: 0.7, marginTop: 20 }}
                           exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                          className="overflow-hidden text-base font-medium max-w-3xl"
+                          className="overflow-hidden text-base font-medium max-w-3xl whitespace-pre-line"
                         >
                           {item.details}
                         </motion.div>
@@ -876,10 +849,19 @@ export default function App() {
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Master</span>
-                <div className="w-52 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group cursor-pointer">
-                  <span className="text-brand-purple/20 font-black uppercase text-[12px] tracking-widest">Logo Master</span>
-                </div>
+                <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Patrocinador Master</span>
+                <a 
+                  href="https://www.blumitalents.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+                >
+                  <img 
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/C%C3%B3pia%20de%20Logotipo%20Blumi%20com%20descritivo%20-%20verde.png" 
+                    alt="Blumi Patrocinador Master" 
+                    className="max-h-[61px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
+                  />
+                </a>
               </div>
             </div>
 
@@ -945,9 +927,6 @@ export default function App() {
           <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-[9px] uppercase tracking-widest font-bold opacity-40">
               © 2026 LEAPY ON | CONFERÊNCIA ANUAL DE TALENTOS
-            </div>
-            <div className="text-[8px] uppercase tracking-[0.2em] font-medium opacity-20 hover:opacity-50 transition-opacity cursor-default">
-              Edição 2024 • Salvador/BA — Edição 2025 • São Paulo/SP
             </div>
           </div>
         </div>
