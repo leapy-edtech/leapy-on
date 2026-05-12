@@ -32,6 +32,7 @@ const PURCHASE_TICKET_URL = "https://www.sympla.com.br/evento/leapy-on-2026-conf
 const SPEAKERS = [
   {
     name: "Michelle Schneider",
+    type: "Palestra",
     title: "Especialista em futuro do trabalho\ne autora best seller",
     role: "Especialista em futuro do trabalho, autora best-seller de \"O Profissional do Futuro\" e uma das principais vozes sobre o futuro do trabalho no Brasil. Com duas décadas de experiência liderando equipes em empresas como Google, LinkedIn e TikTok, hoje é professora convidada da Singularity University e sócia da consultoria americana de IA Signal & Cipher, onde ajuda empresas e líderes a repensar o trabalho e o papel humano na era da inteligência artificial.",
     image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Michelle%20Schneider.png",
@@ -39,29 +40,45 @@ const SPEAKERS = [
   },
   {
     name: "Matheus Fonseca",
+    type: "Palestra",
     title: "Cofundador da Leapy",
     role: "Matheus Fonseca, cofundador da Leapy. Formado no programa Ignite de Stanford, tem mais de oito anos de experiência em RH. Liderou a expansão dos programas de entrada da Movile e fundou a Fundação 1Bi.",
     image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Matheus%20Fonseca.png",
     linkedin: "https://www.linkedin.com/in/mvrfonseca/"
   },
   {
+    name: "Gislaine Lima",
+    type: "Painel",
+    title: "Superintendente de capital humano no Banco Bradesco",
+    role: "Com mais de 22 anos de experiência em Recursos Humanos. Executiva com forte atuação em educação corporativa, desenvolvimento organizacional e cultura, lidera a criação e implementação de estratégias e programas de liderança, gestão de desempenho, sucessão e experiência do colaborador, com impacto no Brasil e em operações internacionais. É formada em Comunicação Social, com pós-graduação em Administração de RH pela FAAP e MBA em Ciências do Consumo pela ESPM.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Gislaine.jpeg",
+    linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
+  },
+  {
+    name: "Rachel Sarti",
+    type: "Painel",
+    title: "Head de Gente & Gestão na DASA",
+    role: "Executiva de Recursos Humanos com trajetória consolidada em grandes empresas, liderando transformações culturais, desenvolvimento de lideranças e estratégias de engajamento. Com experiência em múltiplos setores, atua na construção de ambientes de alta performance e cultura forte. Atualmente na Dasa, conduz iniciativas de Desenvolvimento, Cultura, ESG e Experiência do Colaborador, conectando pessoas à estratégia do negócio.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Rachel.jpeg",
+    linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
+  },
+  {
     name: "Maira Habimorad",
+    type: "Painel",
     title: "CEO do Inteli",
     role: "CEO do Inteli (Instituto de Tecnologia e Lideranças), Maíra também é membro do conselho do BTG Pactual e do Banco Pan, além de cofundadora da Bettha. Por nove anos, liderou a Cia de Talentos, do Grupo DMRH.\n\nÉ formada em Relações Internacionais pela FAAP e em Filosofia pela Mackenzie, combinando uma formação que a capacitou a entender as complexidades do mundo dos negócios e educação.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Ma%C3%ADra%20Habimorad.png"
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Ma%C3%ADra%20Habimorad.png",
+    linkedin: "https://www.linkedin.com/in/maira-habimorad-738a81/"
   },
   {
     name: "Roberta Saragiotto",
+    type: "Mediação",
     title: "Cofundadora da Blumi",
     role: "Executiva de RH com 20 anos de experiência, com passagem por Credit Suisse, Credit Agricole e Morgan Stanley. Especialista em jovens talentos, recrutamento e convivência entre gerações, iniciou sua relação com a Start Carreiras como investidora-anjo. Hoje é cofundadora da Blūmi, responsável por estratégia, mercado e relacionamento com empresas.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Foto%20-%20Roberta%20Saragiotto.png"
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Foto%20-%20Roberta%20Saragiotto.png",
+    linkedin: "https://www.linkedin.com/in/roberta-saragiotto-53508116/"
   },
-  {
-    name: "Em breve",
-    role: "A inovação não para. Em breve, mais um especialista para compartilhar insights valiosos com nossa comunidade.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
-    isPlaceholder: true
-  },
+
   {
     name: "Em breve",
     role: "Conexões que transformam. Aguarde o anúncio de mais um palestrante confirmado para o Leapy ON.",
@@ -72,12 +89,6 @@ const SPEAKERS = [
     name: "Em breve",
     role: "O futuro dos jovens talentos em debate. Nova confirmação em breve em nossos canais oficiais.",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
-    isPlaceholder: true
-  },
-  {
-    name: "Em breve",
-    role: "Lideranças que inspiram. Estamos finalizando os detalhes para trazer mais uma voz relevante para o nosso palco.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
     isPlaceholder: true
   }
 ];
@@ -123,7 +134,7 @@ const AGENDA = [
   {
     time: "16h40 – 17h25",
     title: "Do palco para a troca",
-    details: "Rodas de conversa em pequenos grupos para discussão de desafios reais e construções coletivas"
+    details: "Rodas de conversa em pequenos grupos para discussão de desafios reais e construções coletivas.\n\nTRILHA 1: Como influenciar a efetivação e construir programas de entrada que funcionem como pipelines de talentos\n\nTRILHA 2: Como lidar com os impactos da IA na contratação e no desenvolvimento de jovens talentos\n\nTRILHA 3: Como engajar jovens talentos em jornadas de aprendizagem e desenvolvimento\n\nTRILHA 4: Como comunicar a marca empregadora e atrair jovens talentos"
   },
   {
     time: "17h25 – 17h45",
@@ -206,6 +217,14 @@ const SpeakerCard = ({ speaker, index }: any) => {
               />
             )}
             {/* Overlay Gradient */}
+            <div className="absolute top-6 left-6 z-10 flex flex-col gap-2">
+              {speaker.type && !speaker.isPlaceholder && (
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-lg">
+                  {speaker.type}
+                </div>
+              )}
+            </div>
+
             <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/90 via-brand-purple/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
             
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -271,7 +290,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
               </div>
 
             <div className="relative z-10 pt-4 flex items-center justify-between border-t border-white/10">
-              <span className="text-[10px] text-brand-orange uppercase tracking-[0.2em] font-black">Palestrante Oficial</span>
+              <span className="text-[10px] text-brand-orange uppercase tracking-[0.2em] font-black">{speaker.isPlaceholder ? 'Palestrante Oficial' : speaker.type}</span>
               <div className="text-white/40 text-[10px] font-black uppercase tracking-widest">Clique p/ voltar</div>
             </div>
           </div>
@@ -281,7 +300,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
   );
 };
 
-const Modal = ({ isOpen, onClose, children }) => (
+const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => (
   <AnimatePresence>
     {isOpen && (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -329,7 +348,7 @@ const ButtonCTA = ({ children, className = "", secondary = false, animate }: any
 );
 
 export default function App() {
-  const [expandedAgenda, setExpandedAgenda] = useState(null);
+  const [expandedAgenda, setExpandedAgenda] = useState<number | null>(null);
   const ticketControls = useAnimation();
   const scrollerRef = React.useRef<HTMLDivElement>(null);
 
@@ -377,7 +396,7 @@ export default function App() {
       <header id="home" className="relative min-h-screen w-full flex items-center justify-center">
         {/* Background Video */}
         <div className="absolute inset-0 bg-brand-purple overflow-hidden pointer-events-none">
-          <iframe 
+          <iframe
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[177.77vh] h-[100vh] min-w-[100vw] min-h-[56.25vw] md:w-[100vw] md:h-[56.25vw] md:min-h-[100vh] md:min-w-[177.77vh] object-cover opacity-75 max-w-none"
             src="https://www.youtube.com/embed/fI4B7r6z1jA?autoplay=1&mute=1&loop=1&playlist=fI4B7r6z1jA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
             title="Leapy ON Background Video"
@@ -866,29 +885,40 @@ export default function App() {
             </div>
 
             {/* Other Tiers (Horizontal Row) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-start">
               <div className="flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Ouro</span>
-                <div className="w-full min-h-[60px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group cursor-pointer">
-                  <span className="text-brand-purple/20 font-black uppercase text-[11px] tracking-widest">Logo Ouro</span>
+                <div className="flex flex-row gap-8 items-center justify-center">
+                  <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
+                    <img 
+                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ltf-logo-color%20(2).png" 
+                      alt="Learn to fly" 
+                      className="max-h-[77px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
+                    />
+                  </div>
+                  <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
+                    <img 
+                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Benchmark%20-%20Programa%20de%20Jovens%20Talentos%20(1200%20x%20800%20px).png" 
+                      alt="Lyga" 
+                      className="max-h-[67px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Prata</span>
-                <div className="w-full min-h-[60px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group cursor-pointer">
-                  <span className="text-brand-purple/20 font-black uppercase text-[11px] tracking-widest">Logo Prata</span>
+                <div className="w-full min-h-[60px] flex items-center justify-center transition-all duration-300 group">
+                  {/* Espaço para logo Prata */}
                 </div>
               </div>
               <div className="flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Bronze</span>
-                <div className="w-full min-h-[60px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group cursor-pointer">
-                  <span className="text-brand-purple/20 font-black uppercase text-[11px] tracking-widest text-center px-4">Logo Bronze</span>
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Apoio</span>
-                <div className="w-full min-h-[60px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 group cursor-pointer">
-                  <span className="text-brand-purple/20 font-black uppercase text-[11px] tracking-widest">Logo Apoio</span>
+                <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
+                  <img 
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logo%20PROA%20azul.png" 
+                    alt="PROA" 
+                    className="max-h-[45px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
+                  />
                 </div>
               </div>
             </div>
