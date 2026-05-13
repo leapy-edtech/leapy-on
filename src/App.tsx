@@ -78,6 +78,14 @@ const SPEAKERS = [
     image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Foto%20-%20Roberta%20Saragiotto.png",
     linkedin: "https://www.linkedin.com/in/roberta-saragiotto-53508116/"
   },
+  {
+    name: "Tatiane Santos",
+    type: "Palestra",
+    title: "Customer Success na Leapy",
+    role: "Na Leapy, atua como principal parceira das empresas clientes, conduzindo-as na construção de suas metas de sucesso — da efetivação de jovens aprendizes à redução da carga operacional do RH, permitindo que a área atue de forma mais estratégica.\n\nSua própria trajetória começou como aprendiz. Desde então, construiu uma carreira conectada à transformação social, sempre na intersecção entre pessoas, desenvolvimento e impacto.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Tati-1.png?v=2",
+    linkedin: "https://www.linkedin.com/in/tatianesant/"
+  },
 
   {
     name: "Em breve",
@@ -884,27 +892,39 @@ export default function App() {
               </div>
             </div>
 
-            {/* Other Tiers (Horizontal Row) */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-start">
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Ouro</span>
-                <div className="flex flex-row gap-8 items-center justify-center">
-                  <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
-                    <img 
-                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ltf-logo-color%20(2).png" 
-                      alt="Learn to fly" 
-                      className="max-h-[77px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
-                    />
-                  </div>
-                  <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
-                    <img 
-                      src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Benchmark%20-%20Programa%20de%20Jovens%20Talentos%20(1200%20x%20800%20px).png" 
-                      alt="Lyga" 
-                      className="max-h-[67px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
-                    />
-                  </div>
-                </div>
+            {/* Ouro Tier (Full Width Row) */}
+            <div className="flex flex-col items-center mb-16 pb-8 border-b border-brand-purple/5">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-6 block">Ouro</span>
+              <div className="flex flex-row gap-12 md:gap-20 items-center justify-center">
+                <a
+                  href="https://www.learntofly.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ltf-logo-color%20(2).png"
+                    alt="Learn to fly"
+                    className="max-h-[77px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                  />
+                </a>
+                <a
+                  href="https://www.deulyga.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Benchmark%20-%20Programa%20de%20Jovens%20Talentos%20(1200%20x%20800%20px).png"
+                    alt="Lyga"
+                    className="max-h-[67px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                  />
+                </a>
               </div>
+            </div>
+
+            {/* Other Tiers (Horizontal Row) */}
+            <div className="grid grid-cols-2 gap-8 items-start max-w-2xl mx-auto">
               <div className="flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Prata</span>
                 <div className="w-full min-h-[60px] flex items-center justify-center transition-all duration-300 group">
@@ -913,13 +933,18 @@ export default function App() {
               </div>
               <div className="flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Bronze</span>
-                <div className="flex items-center justify-center transition-all duration-300 group cursor-pointer">
-                  <img 
-                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logo%20PROA%20azul.png" 
-                    alt="PROA" 
-                    className="max-h-[45px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
+                <a
+                  href="https://www.proa.org.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logo%20PROA%20azul.png"
+                    alt="PROA"
+                    className="max-h-[45px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
                   />
-                </div>
+                </a>
               </div>
             </div>
           </div>
