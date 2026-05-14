@@ -47,20 +47,12 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/mvrfonseca/"
   },
   {
-    name: "Gislaine Lima",
+    name: "Ana K Melo",
     type: "Painel",
-    title: "Superintendente de capital humano no Banco Bradesco",
-    role: "Com mais de 22 anos de experiência em Recursos Humanos. Executiva com forte atuação em educação corporativa, desenvolvimento organizacional e cultura, lidera a criação e implementação de estratégias e programas de liderança, gestão de desempenho, sucessão e experiência do colaborador, com impacto no Brasil e em operações internacionais. É formada em Comunicação Social, com pós-graduação em Administração de RH pela FAAP e MBA em Ciências do Consumo pela ESPM.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Gislaine.jpeg",
-    linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
-  },
-  {
-    name: "Rachel Sarti",
-    type: "Painel",
-    title: "Head de Gente & Gestão na DASA",
-    role: "Executiva de Recursos Humanos com trajetória consolidada em grandes empresas, liderando transformações culturais, desenvolvimento de lideranças e estratégias de engajamento. Com experiência em múltiplos setores, atua na construção de ambientes de alta performance e cultura forte. Atualmente na Dasa, conduz iniciativas de Desenvolvimento, Cultura, ESG e Experiência do Colaborador, conectando pessoas à estratégia do negócio.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Rachel.jpeg",
-    linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
+    title: "Executiva de RH e mentora pela\nLearn to Fly",
+    role: "Executiva de RH, mentora pela Learn to Fly e fundadora da Catarse HUB, consultoria especializada em Pessoas e Liderança. \n\nCom passagens por Diageo e XP Inc., onde se tornou a primeira e única mulher com deficiência a se tornar sócia, acumula mais de uma década desenvolvendo lideranças, estruturando áreas de people e construindo culturas organizacionais que funcionam na prática.\n\nTEDx Speaker, mentora de carreiras e lideranças, especialista em diversidade e inclusão, coautora de dois livros e reconhecida como Top 20 HR Influencers 2025.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Template%20Speakers%20Leapy%20ON%20(1).png",
+    linkedin: "https://www.linkedin.com/in/anakmeloo/?originalSubdomain=br"
   },
   {
     name: "Maira Habimorad",
@@ -69,6 +61,22 @@ const SPEAKERS = [
     role: "CEO do Inteli (Instituto de Tecnologia e Lideranças), Maíra também é membro do conselho do BTG Pactual e do Banco Pan, além de cofundadora da Bettha. Por nove anos, liderou a Cia de Talentos, do Grupo DMRH.\n\nÉ formada em Relações Internacionais pela FAAP e em Filosofia pela Mackenzie, combinando uma formação que a capacitou a entender as complexidades do mundo dos negócios e educação.",
     image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Ma%C3%ADra%20Habimorad.png",
     linkedin: "https://www.linkedin.com/in/maira-habimorad-738a81/"
+  },
+  {
+    name: "Gislaine Lima",
+    type: "Painel",
+    title: "Superintendente de capital humano no Banco Bradesco",
+    role: "Com mais de 22 anos de experiência em Recursos Humanos. Executiva com forte atuação em educação corporativa, desenvolvimento organizacional e cultura, lidera a criação e implementação de estratégias e programas de liderança, gestão de desempenho, sucessão e experiência do colaborador, com impacto no Brasil e em operações internacionais. É formada em Comunicação Social, com pós-graduação em Administração de RH pela FAAP e MBA em Ciências do Consumo pela ESPM.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Gislaine.jpeg",
+    linkedin: "https://www.linkedin.com/in/limagislaine/"
+  },
+  {
+    name: "Rachel Sarti",
+    type: "Painel",
+    title: "Head de Gente & Gestão na DASA",
+    role: "Executiva de Recursos Humanos com trajetória consolidada em grandes empresas, liderando transformações culturais, desenvolvimento de lideranças e estratégias de engajamento. Com experiência em múltiplos setores, atua na construção de ambientes de alta performance e cultura forte. Atualmente na Dasa, conduz iniciativas de Desenvolvimento, Cultura, ESG e Experiência do Colaborador, conectando pessoas à estratégia do negócio.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Rachel.jpeg",
+    linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
   },
   {
     name: "Roberta Saragiotto",
@@ -87,6 +95,14 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/tatianesant/"
   },
 
+  {
+    name: "Ághata Brito",
+    type: "Cerimonialista",
+    title: "Estagiária na Rede Globo",
+    role: "Ághata Brito trabalha com comunicação estratégica, marketing de conteúdo e análise de dados, desenvolvendo projetos voltados para posicionamento digital e construção de narrativas autênticas. \n\nAtualmente faz parte do time de Marketing de Influência e Produção da Rede Globo e teve passagem pela Stone, quando foi Jovem Aprendiz com apoio da Leapy.\n\nSua trajetória reúne experiências em Publicidade, Marketing e Comunicação Social, com foco em criatividade, estratégia e conexão com pessoas.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/image%20(42).png",
+    linkedin: "https://www.linkedin.com/in/%C3%A1ghata-brito-0a61b4237/"
+  },
   {
     name: "Em breve",
     role: "Conexões que transformam. Aguarde o anúncio de mais um palestrante confirmado para o Leapy ON.",
@@ -135,7 +151,7 @@ const AGENDA = [
   },
   {
     time: "16h10 – 16h40",
-    title: "Pausa para recarregar e trocar",
+    title: "pausa para recarregar",
     details: "Coffee break com acesso às ativações e espaços dos parceiros",
     icon: "snack"
   },
@@ -156,8 +172,8 @@ const AGENDA = [
   },
   {
     time: "18h15 – 19h00",
-    title: "Vozes do trabalho - diferentes perspectivas, um desafio em comum",
-    details: "Lideranças empresariais, empreendedores e representantes da academia discutem como suas frentes se conectam (ou precisam se conectar) para responder às transformações do mercado de trabalho"
+    title: "Vozes do trabalho: a pauta de jovens talentos sob a lente executiva",
+    details: "Lideranças debatem como a pauta jovens talentos é vista de cima, como conectá-la ao negócio e o papel de empresas e academia no desenvolvimento de pessoas em um cenário de tantas transformações."
   },
   {
     time: "19h00 – 19h30",
@@ -242,7 +258,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
                     {speaker.name}
                   </h4>
                   {speaker.title && (
-                    <p className="bg-brand-orange text-white text-[10px] font-black uppercase tracking-wider mt-2 px-2 py-1 inline-block rounded-sm shadow-lg whitespace-pre-line leading-tight">
+                    <p className="bg-brand-orange text-white text-[10px] font-black uppercase tracking-wider mt-2 px-2 py-1 inline-block rounded-sm shadow-lg whitespace-pre-line leading-tight max-w-[85%]">
                       {speaker.title}
                     </p>
                   )}
@@ -405,18 +421,20 @@ export default function App() {
         {/* Background Video */}
         <div className="absolute inset-0 bg-brand-purple overflow-hidden pointer-events-none">
           <iframe
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[177.77vh] h-[100vh] min-w-[100vw] min-h-[56.25vw] md:w-[100vw] md:h-[56.25vw] md:min-h-[100vh] md:min-w-[177.77vh] object-cover opacity-75 max-w-none"
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[177.77vh] h-[100vh] min-w-[100vw] min-h-[56.25vw] md:w-[100vw] md:h-[56.25vw] md:min-h-[100vh] md:min-w-[177.77vh] object-cover opacity-75 max-w-none pointer-events-none"
             src="https://www.youtube.com/embed/fI4B7r6z1jA?autoplay=1&mute=1&loop=1&playlist=fI4B7r6z1jA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
             title="Leapy ON Background Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
           />
           {/* Subtle Overlay */}
-          <div className="absolute inset-0 video-overlay-light" />
+          <div className="absolute inset-0 z-[1] video-overlay-light" />
           {/* Bottom Fade Gradient */}
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-purple to-transparent z-10" />
         </div>
+
+        {/* Blocks mouse events from reaching the YouTube iframe compositor layer */}
+        <div className="absolute inset-0 z-[5]" />
 
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-5 md:px-6 h-full flex flex-col pt-8 md:pt-16 pb-20 text-white">
