@@ -206,13 +206,14 @@ const SpeakerCard = ({ speaker, index }: any) => {
       tabIndex={0}
       aria-label={`Ver bio de ${speaker.name}`}
     >
-      <motion.div 
+      <motion.div
         className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d]"
+        style={{ transformStyle: 'preserve-3d' }}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         {/* FRONT SIDE */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]">
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]" style={{ backfaceVisibility: 'hidden' }}>
           <div className="relative w-full h-full overflow-hidden rounded-3xl bg-brand-light border border-black/5 shadow-lg group-hover:shadow-2xl transition-shadow duration-500">
             {speaker.isPlaceholder ? (
               <div className="absolute inset-0 bg-brand-purple/10 overflow-hidden group-hover:bg-brand-orange/10 transition-colors duration-500">
@@ -284,8 +285,9 @@ const SpeakerCard = ({ speaker, index }: any) => {
         </div>
 
         {/* BACK SIDE */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]"
+          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
           <div className="w-full h-full bg-brand-purple rounded-3xl p-8 flex flex-col justify-between border-2 border-brand-orange/30 shadow-2xl relative overflow-hidden">
             {/* Decorative background icon */}
