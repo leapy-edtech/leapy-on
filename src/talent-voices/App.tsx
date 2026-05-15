@@ -1,8 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, Linkedin, Volume2, VolumeX } from 'lucide-react';
-
-const PURCHASE_TICKET_URL = "https://www.sympla.com.br/evento/leapy-on-2026-conferencia-anual-de-jovens-talentos/3397818";
+import { motion } from 'motion/react';
+import { ArrowRight, Linkedin, Volume2, VolumeX } from 'lucide-react';
 
 interface Speaker {
   name: string;
@@ -201,42 +199,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     </motion.div>
   );
 };
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}
-
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => (
-  <AnimatePresence>
-    {isOpen && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-brand-purple/90 backdrop-blur-md"
-        />
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="relative w-full max-w-2xl bg-white rounded-[40px] p-8 md:p-12 shadow-2xl overflow-hidden"
-        >
-          <button
-            onClick={onClose}
-            className="absolute top-6 right-6 p-2 text-brand-purple/40 hover:text-brand-orange transition-colors z-10"
-          >
-            <X size={32} />
-          </button>
-          {children}
-        </motion.div>
-      </div>
-    )}
-  </AnimatePresence>
-);
 
 export default function App() {
   const [isMuted, setIsMuted] = useState(true);
