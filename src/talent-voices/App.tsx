@@ -213,7 +213,7 @@ export default function App() {
           <img
             src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Fundo%20talent%20voices.png?v=20260515"
             alt="Talent Voices Background"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -271,7 +271,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {SPEAKERS.map((speaker, index) => (
-              <div key={index} className="w-full">
+              <div key={speaker.name} className="w-full">
                 <SpeakerCard speaker={speaker} index={index} />
               </div>
             ))}
@@ -355,7 +355,7 @@ export default function App() {
                   />
 
                   <button
-                    onClick={() => setIsMuted(!isMuted)}
+                    onClick={() => { setIsMuted(!isMuted); if (isMuted) videoRef.current?.play(); }}
                     className="absolute top-4 right-4 z-30 p-2 bg-black/40 hover:bg-black/60 text-white rounded-full transition-all backdrop-blur-sm group/audio"
                     aria-label={isMuted ? "Ativar som" : "Mutar vídeo"}
                   >
