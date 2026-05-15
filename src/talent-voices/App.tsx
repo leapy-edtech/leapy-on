@@ -279,8 +279,32 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. TRANSITION MARQUEE */}
-      <div className="relative z-20 pointer-events-none pb-20">
+      {/* 3. ILLUSTRATION SECTION */}
+      <section className="bg-white pb-20 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="flex justify-center -mb-16 md:-mb-32 lg:-mb-44 relative z-20">
+              <img
+                src="/src/community.png"
+                alt="Comunidade Leapy ON"
+                className="w-full max-w-4xl h-auto drop-shadow-2xl"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 whitespace-nowrap opacity-[0.02] select-none pointer-events-none">
+              <span className="text-[200px] font-black uppercase font-display">LEAPY</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. TRANSITION MARQUEE */}
+      <div className="relative z-20 -mt-20 md:-mt-32 pointer-events-none pb-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-purple to-transparent opacity-20 blur-3xl" />
 
         <div className="relative -rotate-1 md:-rotate-2 scale-105">
