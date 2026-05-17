@@ -79,6 +79,22 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/rachel-sarti-61189021/"
   },
   {
+    name: "Tatiane Santos",
+    type: "Palestra",
+    title: "Customer Success na Leapy",
+    role: "Na Leapy, atua como principal parceira das empresas clientes, conduzindo-as na construção de suas metas de sucesso — da efetivação de jovens aprendizes à redução da carga operacional do RH, permitindo que a área atue de forma mais estratégica.\n\nSua própria trajetória começou como aprendiz. Desde então, construiu uma carreira conectada à transformação social, sempre na intersecção entre pessoas, desenvolvimento e impacto.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Tati-1.png?v=2",
+    linkedin: "https://www.linkedin.com/in/tatianesant/"
+  },
+  {
+    name: "Ághata Brito",
+    type: "Cerimonialista",
+    title: "Estagiária na Rede Globo",
+    role: "Ághata Brito trabalha com comunicação estratégica, marketing de conteúdo e análise de dados, desenvolvendo projetos voltados para posicionamento digital e construção de narrativas autênticas. \n\nAtualmente faz parte do time de Marketing de Influência e Produção da Rede Globo e teve passagem pela Stone, quando foi Jovem Aprendiz com apoio da Leapy.\n\nSua trajetória reúne experiências em Publicidade, Marketing e Comunicação Social, com foco em criatividade, estratégia e conexão com pessoas.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/image%20(42).png",
+    linkedin: "https://www.linkedin.com/in/%C3%A1ghata-brito-0a61b4237/"
+  },
+  {
     name: "Roberta Saragiotto",
     type: "Mediação",
     title: "Cofundadora da Blumi",
@@ -87,21 +103,22 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/roberta-saragiotto-53508116/"
   },
   {
-    name: "Tatiane Santos",
-    type: "Palestra",
-    title: "Customer Success na Leapy",
-    role: "Na Leapy, atua como principal parceira das empresas clientes, conduzindo-as na construção de suas metas de sucesso — da efetivação de jovens aprendizes à redução da carga operacional do RH, permitindo que a área atue de forma mais estratégica.\n\nSua própria trajetória começou como aprendiz. Desde então, construiu uma carreira conectada à transformação social, sempre na intersecção entre pessoas, desenvolvimento e impacto.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Tati-1.png?v=2",
-    linkedin: "https://www.linkedin.com/in/tatianesant/"
+    name: "Mateus Alcantra",
+    type: "Painelista",
+    title: "Jovem Aprendiz no Ifood",
+    role: "Jovem Aprendiz no iFood Benefícios, com formação pela Leapy, atua no time de Eficiência Financeira, onde aplica na prática seus conhecimentos em tecnologia no mundo financeiro. Está cursando Análise e Desenvolvimento de Sistemas pela Faculdade SENAI e essa jornada tem despertado nele um interesse crescente por Inteligência Artificial — uma área que pretende aprofundar e que enxerga como o futuro da tecnologia aplicada aos negócios.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/image%20(43).png",
+    objectPosition: "50% 15%",
+    linkedin: "https://www.linkedin.com/in/mateusalcantara13/",
+    scale: 1.2
   },
-
   {
-    name: "Ághata Brito",
-    type: "Cerimonialista",
-    title: "Estagiária na Rede Globo",
-    role: "Ághata Brito trabalha com comunicação estratégica, marketing de conteúdo e análise de dados, desenvolvendo projetos voltados para posicionamento digital e construção de narrativas autênticas. \n\nAtualmente faz parte do time de Marketing de Influência e Produção da Rede Globo e teve passagem pela Stone, quando foi Jovem Aprendiz com apoio da Leapy.\n\nSua trajetória reúne experiências em Publicidade, Marketing e Comunicação Social, com foco em criatividade, estratégia e conexão com pessoas.",
-    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/image%20(42).png",
-    linkedin: "https://www.linkedin.com/in/%C3%A1ghata-brito-0a61b4237/"
+    name: "Estela Moraes",
+    type: "Painelista",
+    title: "Analista de dados jr na Stone",
+    role: "Desde pequena, sempre foi apaixonada por aprender e se desafiar a ser melhor em tudo o que faz. Embora tenha iniciado sua trajetória no curso técnico em Edificações, foi na área de dados e tecnologia que encontrou seu verdadeiro propósito, ingressando na FATEC para cursar Big Data para Negócios.\n\nSua jornada profissional começou como Jovem Aprendiz em Service Desk e ganhou ainda mais força ao entrar na Stone, onde conquistou sua efetivação em menos de um ano. Atualmente, atua como Analista Júnior em Revenue Assurance na Stone, unindo análise, estratégia e uma forte vontade de crescer, sempre buscando evoluir e gerar impacto por onde passa.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/image%20(44).png",
+    linkedin: "https://www.linkedin.com/in/estela-moraes-382104256/"
   },
   {
     name: "Em breve",
@@ -167,7 +184,7 @@ const AGENDA = [
   },
   {
     time: "17h45 – 18h15",
-    title: "Vozes da juventude - o que as novas gerações tem a dizer",
+    title: "O que as novas gerações têm a dizer",
     details: "Jovens no palco trazendo percepções reais sobre trabalho, carreira, sonhos, expectativas e conflitos"
   },
   {
@@ -234,11 +251,12 @@ const SpeakerCard = ({ speaker, index }: any) => {
                 </div>
               </div>
             ) : (
-              <img 
-                src={speaker.image} 
+              <img
+                src={speaker.image}
                 alt={speaker.name}
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                style={{ objectPosition: (speaker as any).objectPosition || 'center center' }}
               />
             )}
             {/* Overlay Gradient */}
@@ -428,6 +446,7 @@ export default function App() {
             title="Leapy ON Background Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           />
           {/* Subtle Overlay */}
           <div className="absolute inset-0 z-[1] video-overlay-light" />

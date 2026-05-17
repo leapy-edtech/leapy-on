@@ -60,6 +60,12 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/clara-helena-de-paula-fernandes/"
   },
   {
+    name: "Daniela Funchal",
+    title: "IBM",
+    image: "/speakers/daniela_funchal.jpg",
+    linkedin: "https://www.linkedin.com/in/danielafunchal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+  },
+  {
     name: "Deborah Rochar",
     title: "Einstein",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFZLNOTnXLFUQ/profile-displayphoto-scale_200_200/B4DZ0_giJYIoAc-/0/1774886988148?e=1780531200&v=beta&t=l0nPA1GkuCiXvbet_39kAATfzJ0xPLRd4O6x7gQAVjU",
@@ -94,6 +100,12 @@ const SPEAKERS = [
     title: "Unilever",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQExEvAL8ClxEA/profile-displayphoto-shrink_200_200/B4DZXzFBXAHwAY-/0/1743539936472?e=1780531200&v=beta&t=dGgzDHRpxqE66I9Kd4z1c0GGGsoZOemvJkb5mQwAGII",
     linkedin: "https://www.linkedin.com/in/jaqueline-garrido-120bb6119/"
+  },
+  {
+    name: "João Guilherme Pincinato",
+    title: "Smart Fit",
+    image: "/speakers/joao_guilherme_pincinato.png",
+    linkedin: "https://www.linkedin.com/in/jo%C3%A3o-guilherme-t-pincinato-7a90b7104/"
   },
   {
     name: "João Marcos",
@@ -132,6 +144,12 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/m%C3%B4nica-reis-49508362/?skipRedirect=true"
   },
   {
+    name: "Morgana Floriano",
+    title: "Zamp",
+    image: "/speakers/morgana_floriano.png",
+    linkedin: "https://www.linkedin.com/in/morgana-floriano-ab112b59/?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+  },
+  {
     name: "Olivia Ferreira",
     title: "L'Oréal",
     image: "https://media.licdn.com/dms/image/v2/C5603AQHmv8sapo4ffw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1655825708940?e=1780531200&v=beta&t=feVc9sF2CuGQnTjQRqPAaaOzkztAvl0CvH7eBK7FV1s",
@@ -142,6 +160,18 @@ const SPEAKERS = [
     title: "Alpargatas",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHHpjnBBmL5iQ/profile-displayphoto-shrink_200_200/B4DZrR4UpIG8AY-/0/1764457794714?e=1780531200&v=beta&t=DtcCJQiujQxJpBOGis_0NbiCePtyykJOzKTlhWrwWYU",
     linkedin: "https://www.linkedin.com/in/robertaleandro27/"
+  },
+  {
+    name: "Sandra Carvalho",
+    title: "Grupo Boticário",
+    image: "/speakers/sandra_carvalho.jpg",
+    linkedin: "https://www.linkedin.com/in/sandrapcarvalho/"
+  },
+  {
+    name: "Thatiana Valle",
+    title: "Itaú Unibanco",
+    image: "/speakers/thatiana_valle.jpg",
+    linkedin: "https://www.linkedin.com/in/thatiana-valle-189b2897/?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   }
 ];
 
@@ -164,6 +194,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
                src={speaker.image}
                alt={speaker.name}
                referrerPolicy="no-referrer"
+               loading="lazy"
                className="w-full h-full object-cover opacity-60"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/80 to-transparent" />
@@ -173,6 +204,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
             src={speaker.image}
             alt={speaker.name}
             referrerPolicy="no-referrer"
+            loading="lazy"
             className="w-full h-full object-cover transition-all duration-700 group-hover:grayscale group-hover:scale-110"
           />
         )}
@@ -333,7 +365,7 @@ export default function App() {
               </h1>
 
               <p className="text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-2xl text-shadow-premium mx-auto md:mx-0">
-                Uma seleção de 20 nomes que amplificam a conversa sobre o futuro dos programas de talentos no Brasil
+                Uma seleção de 25 nomes que amplificam a conversa sobre o futuro dos programas de talentos no Brasil
               </p>
 
               {/* Mobile Only Image */}
