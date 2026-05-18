@@ -66,7 +66,7 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/danielafunchal?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
   },
   {
-    name: "Deborah Rochar",
+    name: "Deborah Rocha",
     title: "Einstein",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFZLNOTnXLFUQ/profile-displayphoto-scale_200_200/B4DZ0_giJYIoAc-/0/1774886988148?e=1780531200&v=beta&t=l0nPA1GkuCiXvbet_39kAATfzJ0xPLRd4O6x7gQAVjU",
     linkedin: "https://www.linkedin.com/in/deborah-rocha-7b903672/"
