@@ -87,6 +87,14 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/tatianesant/"
   },
   {
+    name: "Luciano Albuquerque",
+    type: "Mediador",
+    title: "Fundador da Lyga",
+    role: "Empreendedor com mais de 10 anos de atuação em educação e desenvolvimento de talentos, dedica sua trajetória à construção de um futuro do trabalho mais inclusivo, em que jovens tenham espaço para desenvolver e colocar seu potencial em prática.\n\nÉ fundador da Lyga, iniciativa criada para apoiar algumas das organizações mais relevantes do Brasil no desenvolvimento de jovens talentos por meio de experiências de aprendizagem, produção de conteúdo e inteligência de dados. Ao longo da jornada, já impactou mais de 20 mil jovens em parceria com empresas como Itaú, Unilever, Vivo, Natura e Serasa Experian.\n\nEm 2023, teve seu trabalho reconhecido pelo SXSW, principal festival global de inovação e criatividade, que destacou a Lyga entre as cinco startups com maior potencial no mundo na categoria Futuro do Trabalho.",
+    image: "https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ChatGPT%20Image%2019%20de%20mai.%20de%202026%2c%2023_45_54.png",
+    linkedin: "https://www.linkedin.com/in/lucianoalbuq/"
+  },
+  {
     name: "Ághata Brito",
     type: "Cerimonialista",
     title: "Estagiária na Rede Globo",
@@ -103,7 +111,7 @@ const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/roberta-saragiotto-53508116/"
   },
   {
-    name: "Mateus Alcantra",
+    name: "Mateus Alcantara",
     type: "Painelista",
     title: "Jovem Aprendiz no Ifood",
     role: "Jovem Aprendiz no iFood Benefícios, com formação pela Leapy, atua no time de Eficiência Financeira, onde aplica na prática seus conhecimentos em tecnologia no mundo financeiro. Está cursando Análise e Desenvolvimento de Sistemas pela Faculdade SENAI e essa jornada tem despertado nele um interesse crescente por Inteligência Artificial — uma área que pretende aprofundar e que enxerga como o futuro da tecnologia aplicada aos negócios.",
@@ -184,7 +192,7 @@ const AGENDA = [
   },
   {
     time: "17h45 – 18h15",
-    title: "O que as novas gerações têm a dizer",
+    title: "Vozes da Juventude: O que as novas gerações têm a dizer",
     details: "Jovens no palco trazendo percepções reais sobre trabalho, carreira, sonhos, expectativas e conflitos"
   },
   {
@@ -896,55 +904,38 @@ export default function App() {
             </h3>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Main Partners (Realização & Master) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <div className="flex flex-col items-center">
-                <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Realização</span>
-                <a 
-                  href="https://www.leapy.com.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
-                >
-                  <img 
-                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logotipo_3.png" 
-                    alt="Leapy Realização" 
-                    className="max-h-24 w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
-                  />
-                </a>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Patrocinador Master</span>
-                <a 
+          <div className="max-w-4xl mx-auto space-y-16">
+            {/* Realização - 1ª linha */}
+            <div className="flex flex-col items-center">
+              <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Realização</span>
+              <a
+                href="https://www.leapy.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+              >
+                <img
+                  src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logotipo_3.png"
+                  alt="Leapy Realização"
+                  className="max-h-32 md:max-h-36 w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                />
+              </a>
+            </div>
+
+            {/* Master - 2ª linha */}
+            <div className="flex flex-col items-center pt-8 border-t border-brand-purple/5">
+              <span className="text-[11px] uppercase tracking-[0.3em] font-black text-brand-purple/40 mb-6 border-b border-brand-purple/10 pb-1">Master</span>
+              <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
+                <a
                   href="https://www.blumitalents.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
                 >
-                  <img 
-                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/C%C3%B3pia%20de%20Logotipo%20Blumi%20com%20descritivo%20-%20verde.png" 
-                    alt="Blumi Patrocinador Master" 
-                    className="max-h-[61px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60" 
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Ouro Tier (Full Width Row) */}
-            <div className="flex flex-col items-center mb-16 pb-8 border-b border-brand-purple/5">
-              <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-6 block">Ouro</span>
-              <div className="flex flex-row gap-12 md:gap-20 items-center justify-center">
-                <a
-                  href="https://www.learntofly.com.br/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
-                >
                   <img
-                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ltf-logo-color%20(2).png"
-                    alt="Learn to fly"
-                    className="max-h-[77px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/C%C3%B3pia%20de%20Logotipo%20Blumi%20com%20descritivo%20-%20verde.png"
+                    alt="Blumi Patrocinador Master"
+                    className="max-h-16 md:max-h-[70px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
                   />
                 </a>
                 <a
@@ -956,22 +947,35 @@ export default function App() {
                   <img
                     src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Benchmark%20-%20Programa%20de%20Jovens%20Talentos%20(1200%20x%20800%20px).png"
                     alt="Lyga"
-                    className="max-h-[67px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                    className="max-h-[70px] md:max-h-[77px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
                   />
                 </a>
               </div>
             </div>
 
-            {/* Other Tiers (Horizontal Row) */}
-            <div className="grid grid-cols-2 gap-8 items-start max-w-2xl mx-auto">
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Prata</span>
-                <div className="w-full min-h-[60px] flex items-center justify-center transition-all duration-300 group">
-                  {/* Espaço para logo Prata */}
-                </div>
+            {/* Ouro - 3ª linha */}
+            <div className="flex flex-col items-center pt-8 border-t border-brand-purple/5">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-6 block">Ouro</span>
+              <div className="flex flex-row items-center justify-center">
+                <a
+                  href="https://www.learntofly.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/ltf-logo-color%20(2).png"
+                    alt="Learn to fly"
+                    className="max-h-[94px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                  />
+                </a>
               </div>
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-4 block">Bronze</span>
+            </div>
+
+            {/* Bronze - 4ª linha */}
+            <div className="flex flex-col items-center pt-8 border-t border-brand-purple/5">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-black text-brand-purple/30 mb-6 block">Bronze</span>
+              <div className="flex flex-row items-center justify-center">
                 <a
                   href="https://www.proa.org.br/"
                   target="_blank"
@@ -981,7 +985,7 @@ export default function App() {
                   <img
                     src="https://39765206.fs1.hubspotusercontent-na1.net/hubfs/39765206/Logo%20PROA%20azul.png"
                     alt="PROA"
-                    className="max-h-[45px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
+                    className="max-h-[48px] w-auto transition-all duration-500 group-hover:grayscale group-hover:opacity-60"
                   />
                 </a>
               </div>
