@@ -268,7 +268,7 @@ const SpeakerCard = ({ speaker, index }: any) => {
               />
             )}
             {/* Overlay Gradient */}
-            <div className="absolute top-6 left-6 z-10 flex flex-col gap-2">
+            <div className="absolute top-6 left-6 z-10 flex flex-col gap-2 [backface-visibility:hidden]" style={{ backfaceVisibility: 'hidden' }}>
               {speaker.type && !speaker.isPlaceholder && (
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-lg">
                   {speaker.type}
