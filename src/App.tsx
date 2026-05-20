@@ -326,9 +326,6 @@ const SpeakerCard = ({ speaker, index }: any) => {
                   <div className="w-10 h-10 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange shrink-0">
                     <Lightbulb size={20} />
                   </div>
-                  <div className="text-[10px] text-white/40 uppercase tracking-widest font-black border border-white/10 px-3 py-1 rounded-full shrink-0">
-                    Bio Completa
-                  </div>
                 </div>
                 
                 <h4 className="text-xl font-black text-white font-display uppercase tracking-tight mb-2 leading-none shrink-0">
