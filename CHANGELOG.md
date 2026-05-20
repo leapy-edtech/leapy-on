@@ -2,6 +2,23 @@
 
 Todas as mudanças notáveis deste projeto são documentadas aqui.
 
+## [0.1.2] - 2026-05-20
+
+### Added
+- **Luciano Albuquerque** (Fundador da Lyga, Mediador) adicionado à grade de palestrantes, com bio completa e link para LinkedIn
+- Lyga incluída como patrocinador **Master** ao lado da Blumi
+
+### Changed
+- Seção de patrocinadores reestruturada: layout em blocos verticais separados por divisória, com Realização, Master, Ouro e Bronze em linhas próprias (substituindo grade 2-colunas anterior)
+- Logo da Leapy no bloco Realização aumentada (`max-h-32 md:max-h-36`)
+- Título do bloco Talent Voices na agenda atualizado: "Vozes da Juventude: O que as novas gerações têm a dizer"
+
+### Fixed
+- Correção do nome **Mateus Alcantara** (ortografia corrigida de "Alcantra")
+- Seção Prata removida (era placeholder vazio sem conteúdo)
+
+---
+
 ## [0.1.1] - 2026-05-17
 
 ### Added
