@@ -20,6 +20,7 @@ export default defineConfig(({mode}) => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           talentVoices: path.resolve(__dirname, 'talent-voices/index.html'),
+          cadernodeaprendizados: path.resolve(__dirname, 'caderno-de-aprendizados/index.html'),
         },
       },
     },
