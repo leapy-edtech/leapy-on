@@ -9,7 +9,7 @@ export const CORES_MESA: ColorMesa[] = [
   { hex: '#f8629e', nome: 'Rosa' },
   { hex: '#FF0000', nome: 'Vermelho' },
   { hex: '#fcfd3a', nome: 'Amarelo-vivo' },
-  { hex: '#d6d67f', nome: 'Verde-oliva' },
+  { hex: '#F5A623', nome: 'Laranja' },
   { hex: '#ADADAD', nome: 'Prata' },
   { hex: '#000000', nome: 'Preto' },
 ]
