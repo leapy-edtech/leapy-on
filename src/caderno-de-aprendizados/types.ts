@@ -7,11 +7,11 @@ export const CORES_MESA: ColorMesa[] = [
   { hex: '#5ff402', nome: 'Verde-limão' },
   { hex: '#24baf9', nome: 'Azul-ciano' },
   { hex: '#f8629e', nome: 'Rosa' },
-  { hex: '#f9a334', nome: 'Laranja-claro' },
+  { hex: '#FF0000', nome: 'Vermelho' },
   { hex: '#fcfd3a', nome: 'Amarelo-vivo' },
   { hex: '#d6d67f', nome: 'Verde-oliva' },
-  { hex: '#c6c6c6', nome: 'Cinza' },
-  { hex: '#a67058', nome: 'Marrom' },
+  { hex: '#ADADAD', nome: 'Prata' },
+  { hex: '#000000', nome: 'Preto' },
 ]
 
 export interface ParticipantInfo {
