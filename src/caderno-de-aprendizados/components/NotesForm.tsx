@@ -218,6 +218,10 @@ export default function NotesForm({ participantInfo, onEditIdentification, onRes
         </div>
       </div>
 
+      <button onClick={handleDownloadPDF} className="w-full border-2 border-[#3B3CFF] hover:bg-[#3B3CFF]/5 active:scale-95 transition-all text-[#3B3CFF] font-bold py-3.5 px-6 rounded-xl text-sm flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md">
+        <Download className="w-4 h-4" /> Baixar anotações em PDF
+      </button>
+
       <div className="space-y-5 bg-white p-6 md:p-8 rounded-2xl border border-[#EAEAEA] shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
         {recovering && (
           <div className="flex items-center gap-2 text-xs text-gray-400 animate-pulse pb-2">
@@ -259,11 +263,8 @@ export default function NotesForm({ participantInfo, onEditIdentification, onRes
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4">
-        <button onClick={handleDownloadPDF} className="w-full sm:w-auto border-2 border-[#3B3CFF] hover:bg-[#3B3CFF]/5 active:scale-95 transition-all text-[#3B3CFF] font-bold py-3.5 px-6 rounded-xl text-sm flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md">
-          <Download className="w-4 h-4" /> Baixar anotações em PDF
-        </button>
-        <button onClick={handleResetSession} className="w-full sm:w-auto text-xs font-bold text-gray-400 hover:text-red-500 cursor-pointer flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg hover:bg-red-50 transition-all">
+      <div className="flex justify-center p-4">
+        <button onClick={handleResetSession} className="text-xs font-bold text-gray-400 hover:text-red-500 cursor-pointer flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg hover:bg-red-50 transition-all">
           <Trash2 className="w-3.5 h-3.5" /> Limpar e começar de novo
         </button>
       </div>
