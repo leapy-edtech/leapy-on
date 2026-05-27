@@ -1,5 +1,12 @@
 {
   "framework": "vite",
   "outputDirectory": "dist",
-  "buildCommand": "npm run build"
+  "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/pesquisa",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfvAaIo1VspZlcv-GurK0RI9vJ6FtZsFZfUFR-xUY8k_MmY9Q/viewform",
+      "permanent": false
+    }
+  ]
 }
